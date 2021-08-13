@@ -16,6 +16,12 @@ parameters:
     - Hello5
     - Hello6
 
+variables:
+- name: myVar1
+  value: 12345
+- name: myVar2
+  value: aaaa
+
 trigger:
 - main
 
@@ -23,5 +29,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo $(MyVariable)
+- script: echo $(myVar1)
   displayName: Test
