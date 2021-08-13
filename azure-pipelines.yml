@@ -9,6 +9,7 @@ parameters:
   default: Hello
   type: string
   values:
+    - Hello
     - Hello2
     - Hello3
     - Hello4
