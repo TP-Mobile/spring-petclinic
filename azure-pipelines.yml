@@ -3,6 +3,18 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+parameters:
+- name: image
+  displayName: Test Param Name
+  default: Hello
+  type: string
+  values:
+    - Hello2
+    - Hello3
+    - Hello4
+    - Hello5
+    - Hello6
+
 trigger:
 - main
 
