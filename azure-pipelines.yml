@@ -18,6 +18,7 @@ parameters:
 
 variables:
   myVar: 000
+  myVar1: 111
 
 trigger:
 - main
