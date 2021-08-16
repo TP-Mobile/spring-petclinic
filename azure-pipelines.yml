@@ -8,13 +8,6 @@ parameters:
   displayName: Test Param Name
   default: Hello
   type: string
-  values:
-    - Hello
-    - Hello2
-    - Hello3
-    - Hello4
-    - Hello5
-    - Hello6
 
 variables:
   myVar: 000
