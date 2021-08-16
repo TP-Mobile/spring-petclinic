@@ -10,8 +10,11 @@ parameters:
   type: string
 
 variables:
-  myVar: 000
-  myVar1: 111
+  - group: myVarGroup
+  - name: v1
+    value: $[variables.v1]
+  - name: vvv1
+    value: vvv1
 
 trigger:
 - main
@@ -20,5 +23,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo $(myVar1)
+- script: |
+    echo $(v1)
+    echo $(vvv1)
+    echo $[variables.v1]
   displayName: Test
