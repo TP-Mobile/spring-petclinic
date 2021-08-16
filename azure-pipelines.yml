@@ -21,9 +21,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: |
-    echo $(vvv1)
-    echo $(runTimeParam)
-    echo $(MyPipelineVariable)
-    echo $(MyPipelineSecret)
-  displayName: TestVariable
+  - script: |
+      echo "stage variable: $(vvv1)"
+      echo "pipeline param: ${{ parameters.runTimeParam }}"
+      echo "pipeline variable group: ${{ variables.v1 }}"
+      echo "pipeline variable: $(MyPipelineVariable)"
+      echo "pipeline secret: $(MyPipelineSecret)"
