@@ -4,15 +4,13 @@
 # https://aka.ms/yaml
 
 parameters:
-- name: image
+- name: runTimeParam
   displayName: Test Param Name
   default: Hello
   type: string
 
 variables:
   - group: myVarGroup
-  - name: v1
-    value: $[variables.v1]
   - name: vvv1
     value: vvv1
 
@@ -24,7 +22,8 @@ pool:
 
 steps:
 - script: |
-    echo $(v1)
     echo $(vvv1)
-    echo $[variables.v1]
-  displayName: Test
+    echo $(runTimeParam)
+    echo $(MyPipelineVariable)
+    echo $(MyPipelineSecret)
+  displayName: TestVariable
