@@ -22,8 +22,8 @@ pool:
 
 steps:
   - script: |
-      echo "stage variable \$(vvv1): $(vvv1)"
-      echo "pipeline param \${{ paramters.runTimeParam }}: ${{ parameters.runTimeParam }}"
-      echo "pipeline variable group \$[ variables.v1 ] : $[ variables.v1 ]"
-      echo "pipeline variable \$(MyPipelineVariable): $(MyPipelineVariable)"
-      echo "pipeline secret \$(MyPipelineSecret): $(MyPipelineSecret)"
+      echo "stage variable: $(vvv1)"
+      echo "pipeline param: ${{ parameters.runTimeParam }}"
+      echo "pipeline variable group: $[ variables.v1 ]"
+      echo "pipeline variable: $(MyPipelineVariable)"
+      echo "pipeline secret: $(MyPipelineSecret)"
