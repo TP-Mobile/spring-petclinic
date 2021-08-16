@@ -24,6 +24,7 @@ steps:
   - script: |
       echo "stage variable: $(vvv1)"
       echo "pipeline param: ${{ parameters.runTimeParam }}"
-      echo "pipeline variable group: $[variables.v1]"
+      echo "variable from project variable group: $(v1)"
+      echo "secret from project variable group: $(secret1)"
       echo "pipeline variable: $(MyPipelineVariable)"
       echo "pipeline secret: $(MyPipelineSecret)"
