@@ -6,21 +6,20 @@ name: Test GitHub Actions
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Set output test step
       id: test-output
       run: |
         echo "::set-output name=testVar1::Hello World"
         echo "::set-output name=testVar2::456"
-
+        "::set-output name=testVar3::123"
     - name: Use output variables
       run: |
         echo ${{ steps.test-output.outputs.testVar1 }}
         echo ${{ steps.test-output.outputs.testVar2 }}
+        echo ${{ steps.test-output.outputs.testVar3 }}
+
