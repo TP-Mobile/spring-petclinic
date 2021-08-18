@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 parameters:
 - name: runTimeParam
   displayName: Test Param Name
@@ -28,3 +23,14 @@ steps:
       echo "secret from project variable group: $(secret1)"
       echo "pipeline variable: $(MyPipelineVariable)"
       echo "pipeline secret: $(MyPipelineSecret)"
+      exit 1
+  - task: CmdLine@2
+    condition: always()
+    inputs:
+      script: |
+        echo "Runing task with always()"
+  - task: CmdLine@2
+    condition: failed()
+    inputs:
+      script: |
+        echo "Runing task with failed()"
