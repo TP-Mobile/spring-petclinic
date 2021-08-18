@@ -17,10 +17,8 @@ jobs:
     - name: Set output test step
       id: test-output
       run: |
-        ::set-output name=testVar::123
         echo "::set-output name=testVar2::456"
     - name: Use output variables
       run: |
-        echo ${steps.test-output.outputs.testVar}
         echo ${steps.test-output.outputs.testVar2}
 
