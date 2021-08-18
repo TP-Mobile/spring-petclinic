@@ -16,10 +16,7 @@ jobs:
       run: |
         echo "::set-output name=testVar1::Hello World"
         echo "::set-output name=testVar2::456"
-        "::set-output name=testVar3::123"
     - name: Use output variables
       run: |
         echo ${{ steps.test-output.outputs.testVar1 }}
         echo ${{ steps.test-output.outputs.testVar2 }}
-        echo ${{ steps.test-output.outputs.testVar3 }}
-
