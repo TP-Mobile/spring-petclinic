@@ -25,12 +25,20 @@ steps:
       echo "pipeline secret: $(MyPipelineSecret)"
       exit 1
   - task: CmdLine@2
+    displayName: "Running Task with always() condition"
     condition: always()
     inputs:
       script: |
-        echo "Runing task with always()"
+        echo "this script should run"
   - task: CmdLine@2
+    displayName: "Running Task with failed() condition"
     condition: failed()
     inputs:
       script: |
-        echo "Runing task with failed()"
+        echo "this script should run"
+  - task: CmdLine@2
+    displayName: "Running Task with succeeded() condition"
+    condition: succeeded()
+    inputs:
+      script: |
+        echo "this script should not run"
